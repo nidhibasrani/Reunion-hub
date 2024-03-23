@@ -5,11 +5,11 @@
     "build": "turbo build",
     "dev": "turbo dev",
     "lint": "turbo lint",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\""
+    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "frontend": "dotenv -- turbo run dev --filter=frontend -- --port=3000",
+    "server": "dotenv -- turbo run start --filter=server"
   },
   "devDependencies": {
-    "@repo/eslint-config": "*",
-    "@repo/typescript-config": "*",
     "prettier": "^3.2.5",
     "turbo": "latest"
   },
@@ -18,7 +18,10 @@
   },
   "packageManager": "npm@9.6.7",
   "workspaces": [
-    "apps/*",
-    "packages/*"
-  ]
+    "frontend",
+    "server"
+  ],
+  "dependencies": {
+    "dotenv-cli": "^7.4.1"
+  }
 }
