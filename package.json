@@ -7,7 +7,8 @@
     "lint": "turbo lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "frontend": "dotenv -- turbo run dev --filter=frontend -- --port=3000",
-    "server": "dotenv -- turbo run start --filter=server"
+    "server": "dotenv -- turbo run start --filter=server",
+    "admin": "dotenv -- turbo run dev --filter=admin -- --port=3300"
   },
   "devDependencies": {
     "prettier": "^3.2.5",
@@ -19,7 +20,8 @@
   "packageManager": "npm@9.6.7",
   "workspaces": [
     "frontend",
-    "server"
+    "server",
+    "admin"
   ],
   "dependencies": {
     "dotenv-cli": "^7.4.1"
